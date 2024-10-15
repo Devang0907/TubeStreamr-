@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TubeStreamr</title>
+    <link rel="stylesheet" href="styles.css" /> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=live_tv" />
+</head>
+<body>
+    <h1><span class="material-symbols-outlined">
+      live_tv
+      </span>  TubeStreamr</h1>
+    <div class="video-container">
+        <span class="live-badge"> REC</span>
+        <video id="user-video" autoplay muted></video>
+    </div>
+    <div class="form-container">
+        <input type="text" id="link-code" placeholder="Enter Stream Key" />
+        <button id="submit-code">Submit</button>
+    </div>
+    <button id="start-btn">Go Live</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

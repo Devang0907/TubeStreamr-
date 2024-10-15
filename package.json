@@ -1,0 +1,17 @@
+{
+  "name": "stream-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.0"
+  }
+}

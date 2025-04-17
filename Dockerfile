@@ -1,14 +1,24 @@
 FROM ubuntu:focal
 
-RUN /usr/bin/apt-get update && \
-    /usr/bin/apt-get install -y curl && \
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y curl ffmpeg && \
     curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
-    /usr/bin/apt-get update && \
-    /usr/bin/apt-get upgrade -y && \
-    /usr/bin/apt-get install -y nodejs ffmpeg
+    apt-get install -y nodejs && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# Set working directory
 WORKDIR /home/app
 
-RUN npm i -g node
+# Copy application files
+COPY . .
 
-CMD node index.js
+# Install Node.js dependencies
+RUN npm install
+
+# Expose the port your app runs on (e.g., 3000)
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "index.js"]

@@ -27,6 +27,9 @@ submitCodeButton.addEventListener('click', () => {
         state.linkCode = linkCode;
         console.log('Link Code Submitted:', linkCode);
         socket.emit('linkCode', linkCode); // Send the link code to the server
+
+        // Show the "Go Live" button
+        startButton.classList.remove('hidden');
     }
 });
 

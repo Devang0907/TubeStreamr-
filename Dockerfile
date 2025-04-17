@@ -9,6 +9,6 @@ RUN /usr/bin/apt-get update && \
 
 WORKDIR /home/app
 
-RUN npm i -g nodemon
+RUN npm i -g node
 
-CMD nodemon index.js
+CMD node index.js
